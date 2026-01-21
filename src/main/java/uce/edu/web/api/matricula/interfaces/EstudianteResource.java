@@ -30,7 +30,7 @@ public class EstudianteResource {
     @GET
     @Path("/consultarPorId/{id}")
     public Estudiante consultarPorId(@PathParam("id") Integer iden){
-        return this .estudianteService.consultarPorId(iden);
+        return this.estudianteService.consultarPorId(iden);
     }
 
     @POST
