@@ -65,11 +65,11 @@ public class Estudiante extends PanacheEntityBase{
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getProvicnia() {
+    public String getProvincia() {
         return provincia;
     }
 
-    public void setProvicnia(String provincia) {
+    public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
 

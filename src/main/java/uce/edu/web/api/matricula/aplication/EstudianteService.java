@@ -39,17 +39,19 @@ public class EstudianteService {
 
     @Transactional
     public void actualizar(Integer id, EstudianteRepresentation est){
-        Estudiante estu = this.mapperToEstudiante(this.consultarPorId(id));
+        Estudiante estu = this.estudianteRepository.findById(id.longValue());
 
         estu.setApellido(est.getApellido());
         estu.setNombre(est.getNombre());
         estu.setFechaNacimiento(est.getFechaNacimiento());  
+        estu.setGenero(est.getGenero());
+        estu.setProvincia(est.getProvincia());
         //se actualiza directamente por dirtychecking
     }
 
     @Transactional
     public void actualizarParcial(Integer id, EstudianteRepresentation est){
-        Estudiante estu = this.mapperToEstudiante(this.consultarPorId(id));
+        Estudiante estu = this.estudianteRepository.findById(id.longValue());
         if(est.getApellido() != null){
             estu.setApellido(est.getApellido());
         }
@@ -58,6 +60,12 @@ public class EstudianteService {
         }
         if(est.getFechaNacimiento() != null){
             estu.setFechaNacimiento(est.getFechaNacimiento());
+        }
+        if(est.getGenero() != null){
+            estu.setGenero(est.getGenero());
+        }
+        if(est.getProvincia() != null){
+            estu.setProvincia(est.getProvincia());
         }
     }
 
@@ -83,7 +91,7 @@ public class EstudianteService {
         estuR.setApellido(est.getApellido());
         estuR.setFechaNacimiento(est.getFechaNacimiento());
         estuR.setGenero(est.getGenero());
-        estuR.setProvicnia(est.getProvicnia());
+        estuR.setProvincia(est.getProvincia());
 
     return estuR;  
   }
@@ -95,7 +103,7 @@ public class EstudianteService {
         estuR.setApellido(est.getApellido());
         estuR.setFechaNacimiento(est.getFechaNacimiento());
         estuR.setGenero(est.getGenero());
-        estuR.setProvicnia(est.getProvicnia());
+        estuR.setProvincia(est.getProvincia());
 
     return estuR;  
   }
