@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class Materia extends PanacheEntityBase{
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="materia_secuencia")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="materia_sec")
     private Integer id;
     private String nombre;
     private String paralelo;
